@@ -1,0 +1,25 @@
+version: 2
+
+models:
+    - name: stg_orders
+      description: Order data, one row per order.
+      columns:
+        - name: order_id
+          tests:
+            - not_null
+            - unique
+          description: The unique key for each order.
+        - name: customer
+          tests:
+            - not_null
+          description: The Key for the customer referencing the customer_id Key in stg_customers.
+        - name: order_date
+          tests:
+            - not_null
+          description: The date the order was place.
+        - name: store_id
+          tests:
+            - not_null
+          description: "{{ doc('store_id_description') }}"
+ 
+

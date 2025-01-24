@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+    - name: pika_dbt_mini_project
+      schema: pika_dbt_mini_project
+      description: E-commerce data for the Jaffle Shop
+      tables:
+      - name: dim_products_supplies
+        description: Fusion of Products & Suppliers
+      - name: dim_customers
+        description: Customer data with basic cleaning and transformation applied, one row per customer.
+      - name: dim_stores
+        description: Stores.
+      - name: dim_date
+        description: Calendar.
+      - name: fact_orders_items
+        description: Fact table of orders.

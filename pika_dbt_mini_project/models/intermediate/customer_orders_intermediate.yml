@@ -1,0 +1,23 @@
+version: 2
+
+models:
+    - name: customer_orders_intermediate
+      description: Fusion of Items & Customers
+      columns:
+        - name: customer
+          tests:
+            - not_null
+          description: The key of the customer.
+        - name: order_date
+          tests:
+            - not_null
+          description: The date of the order.
+        - name: order_id
+          tests:
+          - not_null
+          - unique
+          description: The id of the order.
+        - name: customer_name
+          tests:
+          - not_null
+          description: The name of the customer.

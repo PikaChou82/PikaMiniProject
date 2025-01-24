@@ -1,0 +1,19 @@
+version: 2
+
+models:
+    - name: stg_items
+      description: Items data.
+      columns:
+        - name: item_id
+          tests:
+            - not_null
+            - unique
+          description: The unique key for each item.
+        - name: order_id
+          tests:
+            - not_null
+          description: The id of the order.
+        - name: sku_id
+          tests:
+            - not_null
+          description: The id of the sku.

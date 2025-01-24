@@ -1,0 +1,26 @@
+version: 2
+
+models:
+    - name: stg_supplies
+      description: Customer data with basic cleaning and transformation applied, one row per customer.
+      columns:
+        - name: supplies_id
+          tests:
+            - not_null
+          description: The unique key for each supply.
+        - name: supplies_name
+          tests:
+            - not_null
+          description: The full name of the supply.
+        - name: cost
+          tests:
+            - not_null
+          description: The cost of the supply.
+        - name: perishable
+          tests:
+            - not_null
+          description: A boolean indicating if the supply is persihable or not.
+        - name: product_sku
+          tests:
+            - not_null
+          description: The sku of the product.

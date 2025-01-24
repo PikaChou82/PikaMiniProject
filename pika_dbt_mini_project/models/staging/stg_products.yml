@@ -1,0 +1,27 @@
+version: 2
+
+models:
+    - name: stg_products
+      description: Customer data with basic cleaning and transformation applied, one row per customer.
+      columns:
+        - name: products_id
+          tests:
+            - not_null
+            - unique
+          description: The unique key for each product.
+        - name: products_name
+          tests:
+            - not_null
+          description: The full name of the product.
+        - name: type
+          tests:
+            - not_null
+          description: The type of the product.
+        - name: price
+          tests:
+            - not_null
+          description: The price of the product.
+        - name: description
+          tests:
+            - not_null
+          description: The full description of the product.

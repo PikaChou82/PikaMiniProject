@@ -1,0 +1,48 @@
+version: 2
+
+models:
+    - name: dim_products_supplies
+      description: Fusion of Products & Suppliers
+      columns:
+        - name: id
+          test:
+            - not_null
+            - unique
+          description: Fusion of Product_id & Sku_id
+        - name: products_id
+          tests:
+            - not_null
+          description: The key of the product.
+        - name: products_name
+          tests:
+            - not_null
+          description: The name of the product.
+        - name: type
+          tests:
+            - not_null
+          description: The type of the product.
+        - name: price
+          tests:
+            - not_null
+          description: The price of the product.
+        - name: description
+          tests:
+            - not_null
+          description: The description of the product.
+        - name: supplies_id
+          tests : 
+            - not_null
+          description: The unique Key of the item in the product.
+        - name: supplies_name
+          tests:
+            - not_null
+          description: The name of the supply.
+        - name: cost
+          tests:
+            - not_null
+          description: The cost of the supply.
+        - name: perishable
+          tests:
+            - not_null
+          description: A boolean which indicates if the supply is persihable or not.
+

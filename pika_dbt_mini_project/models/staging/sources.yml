@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+    - name: pika_dbt_mini_project
+      schema: pika_dbt_mini_project
+      description: E-commerce data for the Jaffle Shop
+      tables:
+        - name: customers
+          description: One record per person who has purchased one or more items.
+        - name: orders
+          description: One record per order.
+        - name: supplies
+          description: One record per supply.
+        - name: items
+          description: One record per item.
+        - name: stores
+          description: One record per store.
+        - name: products
+          description: One record per product.

@@ -1,0 +1,48 @@
+version: 2
+
+models:
+    - name: fact_orders_items
+      description: Fact table of orders.
+      columns:
+        - name: customer
+          tests:
+            - not_null
+          description: The key for each customer.
+        - name: order_date
+          tests:
+            - not_null
+          description: The date of the order.
+        - name: order_id
+          tests:
+            - not_null
+          description: The id of the order.
+        - name: sku_id 
+          tests:
+            - not_null
+            - relationships:
+                {'to': ref('dim_product_supplies'), 'field': 'products_id'} 
+          description: The sku of the product.
+        - name: quantity
+          tests: 
+            - not_null
+          description: the quantity ordered by sku
+        - name: amount
+          tests: 
+            - not_null
+          description: the amount ordered by sku
+        - name: amount_charged
+          tests: 
+            - not_null
+          description: the amount charged with tax ordered by sku
+        - name: price
+          tests: 
+            - not_null
+          description: the price by sku       
+        - name: tax_rate
+          tests: 
+            - not_null
+          description: the tax applied on the store
+        - name: store_id
+          tests: 
+            - not_null
+          description: The key of the store     

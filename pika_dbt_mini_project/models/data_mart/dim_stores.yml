@@ -1,0 +1,23 @@
+version: 2
+
+models:
+    - name: dim_stores
+      description: Customer data with basic cleaning and transformation applied, one row per customer.
+      columns:
+        - name: stores_id
+          tests:
+            - not_null
+            - unique
+          description: The unique key for each store.
+        - name: stores_name
+          tests:
+            - not_null
+          description: The full name of the store.
+        - name: opened_at
+          tests:
+            - not_null
+          description: The date of the opening.
+        - name: tax_rate
+          tests:
+            - not_null
+          description: The local tax_rate.

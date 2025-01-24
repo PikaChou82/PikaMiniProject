@@ -1,0 +1,31 @@
+version: 2
+
+models:
+    - name: items_orders_intermediate
+      description: Fusion of Items & Orders
+      columns:
+        - name: item_id
+          tests:
+            - not_null
+            - unique
+          description: The unique key for each row.
+        - name: customer
+          tests:
+            - not_null
+          description: The id of the customer.
+        - name: order_date
+          tests:
+            - not_null
+          description: The date of the order.
+        - name: order_id
+          tests:
+            - not_null
+          description: The id of the order.
+        - name: store_id
+          tests:
+            - not_null
+          description: The id of the Store.
+        - name: sku_id
+          tests:
+            - not_null
+          description: The id of the product.
